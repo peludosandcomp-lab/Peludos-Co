@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Warm Champagne Gold Gradient -->
+    <linearGradient id="champagneGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E7D3" />
+      <stop offset="35%" stop-color="#E2CFB0" />
+      <stop offset="70%" stop-color="#D4BC95" />
+      <stop offset="100%" stop-color="#BFA378" />
+    </linearGradient>
+
+    <!-- Subtle luxury glow filter -->
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <g filter="url(#subtleGlow)" stroke="url(#champagneGold)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Outer Shield Frame -->
+    <!-- Top crest and side borders -->
+    <path d="M 250 85 L 345 105 C 345 105 348 220 310 280 C 285 320 255 348 250 355 C 245 348 215 320 190 280 C 152 220 155 105 155 105 L 250 85 Z" />
+
+    <!-- DOG Silhouette (Left, facing center/right) -->
+    <!-- Dog ears, head profile, muzzle, jaw, neck and chest -->
+    <path d="M 188 178 L 195 125 L 210 148 L 222 150 L 236 170 L 216 177 L 224 205 C 224 235 214 265 198 285" />
+    <!-- Dog back and hind leg curve -->
+    <path d="M 188 178 C 176 200 170 230 175 260 C 178 275 186 288 200 292" />
+    <!-- Dog stylized chest swirl / paw loop and tail extending outward on left -->
+    <path d="M 200 292 C 185 292 172 278 172 262 C 172 245 185 235 198 238 C 208 240 214 252 210 264" />
+    <!-- Tail arching outside shield on left -->
+    <path d="M 172 262 C 158 266 142 258 140 238 C 138 215 150 200 160 190" />
+
+    <!-- CAT Silhouette (Right, facing center/left) -->
+    <!-- Cat head, ears, muzzle facing left -->
+    <path d="M 276 195 L 273 172 L 284 180 L 295 180 L 305 172 L 302 195 C 308 208 308 225 304 242" />
+    <!-- Cat graceful back contour and sitting base -->
+    <path d="M 302 195 C 308 215 315 240 312 268 C 310 288 296 304 278 306 C 265 307 254 298 250 285" />
+    <!-- Cat chest and front sitting leg -->
+    <path d="M 276 195 C 268 208 266 226 268 245 C 270 265 272 280 270 295" />
+    <!-- Cat tail arching outward gracefully to the right -->
+    <path d="M 296 304 C 318 304 336 285 338 255 C 340 230 332 210 335 188 C 337 180 345 180 348 188 C 352 205 346 235 340 262" />
+
+    <!-- Center heart/bond line between dog and cat -->
+    <path d="M 235 240 C 238 265 242 295 250 320" />
+  </g>
+</svg>

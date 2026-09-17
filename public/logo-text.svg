@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 140" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="champagneGoldText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5EBD9" />
+      <stop offset="40%" stop-color="#E2CFB0" />
+      <stop offset="80%" stop-color="#D4BC95" />
+      <stop offset="100%" stop-color="#C1A77E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Brand Title: Peludos & Co -->
+  <text 
+    x="250" 
+    y="70" 
+    text-anchor="middle" 
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" 
+    font-size="58" 
+    font-weight="700" 
+    letter-spacing="0.02em" 
+    fill="url(#champagneGoldText)"
+  >Peludos &amp; Co</text>
+
+  <!-- Subtitle: PREMIUM PET CARE -->
+  <text 
+    x="250" 
+    y="112" 
+    text-anchor="middle" 
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" 
+    font-size="18" 
+    font-weight="500" 
+    letter-spacing="0.34em" 
+    fill="url(#champagneGoldText)"
+    opacity="0.92"
+  >PREMIUM PET CARE</text>
+</svg>

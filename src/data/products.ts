@@ -1,0 +1,396 @@
+import { Product, ProductCategory } from "../types";
+
+export interface CategoryInfo {
+  id: ProductCategory;
+  label: string;
+  subtitle: string;
+  description: string;
+  bannerImage: string;
+  tagline: string;
+}
+
+export const CATEGORIES_CONFIG: CategoryInfo[] = [
+  {
+    id: "smart-tech",
+    label: "Smart Tech & IA",
+    subtitle: "Inteligencia Artificial, Detección Facial & Sensores",
+    description: "Dispositivos conectados de última generación: collares con análisis etológico y traducción acústica, cámaras 2K con dispensadores y comederos biométricos.",
+    bannerImage: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200",
+    tagline: "La vanguardia tecnológica al servicio de tu mascota"
+  },
+  {
+    id: "health",
+    label: "Salud & Diagnóstico",
+    subtitle: "Monitorización Preventiva & Signos Vitales",
+    description: "Sistemas bio-analíticos que vigilan el pulso cardíaco, hidratación diaria y bienestar renal no invasivo para anticipar cualquier necesidad médica.",
+    bannerImage: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&q=80&w=1200",
+    tagline: "Medicina preventiva y cuidado biométrico diario"
+  },
+  {
+    id: "hygiene",
+    label: "Higiene & Areneros",
+    subtitle: "Diagnóstico Clínico & Sanitización",
+    description: "Areneros autolimpiables con sensores de peso e infrarrojos que evalúan la salud renal y metabólica, junto a purificación biológica activa.",
+    bannerImage: "https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&q=80&w=1200",
+    tagline: "Confort, desinfección y chequeo continuo sin esfuerzo"
+  },
+  {
+    id: "nutrition",
+    label: "Nutrición Sostenible",
+    subtitle: "Proteína Hipoalergénica de Insecto",
+    description: "Formulaciones pioneras basadas en harina de mosca soldado negra (Bioflytech) con 90% de digestibilidad y mínimo impacto ecológico.",
+    bannerImage: "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&q=80&w=1200",
+    tagline: "El futuro de la alimentación canina y felina"
+  },
+  {
+    id: "wellbeing",
+    label: "Bienestar & Movilidad",
+    subtitle: "Rehabilitación Biomecánica & Confort",
+    description: "Innovaciones en movilidad activa, exoesqueletos robóticos electromiográficos y terapias de soporte para recuperar la agilidad natural.",
+    bannerImage: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=1200",
+    tagline: "Devolviendo la vitalidad y el movimiento en cada etapa"
+  },
+  {
+    id: "toys",
+    label: "Estimulación Cognitiva",
+    subtitle: "Juego Inteligente & Antisedentarismo",
+    description: "Dispositivos robóticos con algoritmos de aprendizaje que varían patrones de huida y estímulos sensoriales para enriquecer el entorno felino.",
+    bannerImage: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&q=80&w=1200",
+    tagline: "Mentes despiertas, activas y felices en el hogar"
+  }
+];
+
+export const PRODUCTS_DATA: Product[] = [
+  {
+    id: "pet-01",
+    name: "Arenero Inteligente PETKIT PURA MAX 2 & Litter-Robot 4 (Diagnóstico de Salud Renal)",
+    category: "hygiene",
+    description: "Arenero autolimpiable de última generación con sensores de peso e infrarrojos multieje. Registra cuántas veces entra el gato, cuánto pesa y cuánto tiempo pasa dentro, permitiendo detectar precozmente enfermedad renal crónica, diabetes o hipertiroidismo (algoritmo Petivity).",
+    price: 649,
+    image: "https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Sensores biométricos de peso e infrarrojos de alta precisión para diagnóstico precoz de patologías urinarias y renales",
+      "Registro automatizado de frecuencia de uso, duración de estancia y evolución de masa corporal del felino",
+      "Ciclo de autolimpieza cilíndrico silencioso con sellado hermético anti-olores N50 y contenedor bactericida",
+      "Sincronización Wi-Fi con app móvil, alertas inmediatas y reportes veterinarios exportables en PDF",
+      "Rango de compatibilidad: Felinos desde 1.5 kg hasta 10 kg con entrada accesible y esterilla de recolección"
+    ],
+    history: "Un salto cualitativo en medicina preventiva felina: convierte un acto cotidiano de higiene en un chequeo clínico continuo y no invasivo para cuidar la salud interna de su gato."
+  },
+  {
+    id: "pet-02",
+    name: "Collar GPS Smartwatch Tractive Cat 6 Mini & Dog 6 XL (Monitorización Biométrica)",
+    category: "smart-tech",
+    description: "El salto de localizador GPS tradicional a 'smartwatch para mascotas'. Mide frecuencia cardíaca y respiratoria en reposo, detecta rascado o sacudidas anómalas (alerta temprana de alergias dérmicas u otitis) y notifica cambios conductuales vía app con suscripción.",
+    price: 89,
+    image: "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Sensor fotopletismográfico de pulso cardíaco y control continuo de frecuencia respiratoria",
+      "Algoritmo de detección de rascado atípico: Prevención proactiva de dermatitis, picor y alergias",
+      "Localización GPS en directo con cobertura LTE internacional sin límite de distancia y radar de búsqueda cercana",
+      "Definición de zonas seguras con vallas virtuales y notificaciones instantáneas de escape en su smartphone",
+      "Batería optimizada de hasta 30 días de autonomía, diseño ultra compacto e impermeable sumergible (IPX8)"
+    ],
+    history: "Desarrollado en estrecha colaboración con veterinarios y etólogos europeos para anticipar cualquier malestar antes de que la mascota manifieste dolor visible."
+  },
+  {
+    id: "pet-03",
+    name: "Comedero Inteligente Petkit Yumshare (Reconocimiento Facial por IA)",
+    category: "smart-tech",
+    description: "Dosificador nutricional de precisión con cámara 1080p y reconocimiento facial biométrico. Identifica qué mascota está comiendo, dosifica raciones exactas según su peso y gasto calórico, y avisa si un animal rechaza su ración o intenta comer de más en hogares multi-mascota.",
+    price: 199,
+    image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Cámara Full HD gran angular con visión nocturna infrarroja y reconocimiento facial por IA",
+      "Identificación biométrica individual: Solución idónea para hogares con varios perros o gatos",
+      "Dosificación milimétrica programable de hasta 10 comidas al día con precisión de un gramo",
+      "Alertas automáticas en smartphone si una mascota muestra inapetencia o come fuera de su turno",
+      "Sistema de triple sellado hermético con anillo de silicona y compartimento para desecante alimentario"
+    ],
+    history: "Elimina los conflictos en la hora de comer y asegura que dietas veterinarias específicas sean consumidas exclusivamente por la mascota indicada."
+  },
+  {
+    id: "pet-04",
+    name: "Collar PettiChat AI (Traductor Emocional de Ladridos y Maullidos)",
+    category: "smart-tech",
+    description: "El dispositivo más viral y comentado: procesador bioacústico con IA entrenada con más de 1.000.000 de registros de audio. Interpreta el tono vocal, postura y contexto para ofrecer una lectura emocional (hambre, estrés, llamada de juego, relajación) en la app en tan solo 1,2 segundos.",
+    price: 110,
+    image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Micrófono direccional MEMS de alta sensibilidad con filtrado de ruido ambiental y pisadas",
+      "Red neuronal integrada que analiza espectrogramas vocales en tiempo récord (1,2 segundos)",
+      "Lectura interactiva de estados emocionales: Apetito, búsqueda de atención, alerta, confort o sobreestimulación",
+      "Capa de monitorización conductual continua y diario interactivo de patrones en la app Peludos & Co",
+      "Correa de silicona ultra ligera, hipoalergénica y resistente al agua para perros y gatos"
+    ],
+    history: "Una experiencia lúdica y emocional fascinante que abre una nueva ventana de complicidad y comprensión mutua entre tutores y mascotas."
+  },
+  {
+    id: "pet-05",
+    name: "Fuente Inteligente PETKIT Eversweet Solo 2S (Monitorización de Consumo Hídrico)",
+    category: "health",
+    description: "Fuente de hidratación activa con sensor de caudal biométrico y bomba electromagnética inalámbrica. Registra cuánto bebe la mascota al día —métrica de incalculable valor clínico para prevenir y monitorizar patologías renales y urinarias felinas— avisando por app cuando toca limpiar o cambiar el filtro.",
+    price: 59,
+    image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Sensor de flujo de alta precisión: Monitoriza el volumen de agua consumido diariamente por la mascota",
+      "Detección precoz de alteraciones de consumo (polidipsia/oliguria) ligadas a salud renal y diabetes",
+      "Bomba inalámbrica de inducción electromagnética 3.0: Depósito sin cables para una limpieza 100% segura",
+      "Sistema de microfiltración cuádruple con carbón activado, resina de intercambio iónico y malla purificadora",
+      "Funcionamiento ultra silencioso por debajo de 20 dB y avisos de mantenimiento preventivo en smartphone"
+    ],
+    history: "Los nefrólogos veterinarios coinciden: el control riguroso de la ingesta de agua es el factor preventivo número uno frente al fallo renal en gatos y perros."
+  },
+  {
+    id: "pet-06",
+    name: "Cámara Interactiva Petcube Play 2 & eufy Pet (Láser IA y Dispensador de Premios)",
+    category: "smart-tech",
+    description: "Cámara de vigilancia y compañía inteligente pensada para el 'pet parent' que pasa horas fuera de casa. Permite vigilar con vídeo 2K, hablar con audio bidireccional cristalino, jugar a distancia con puntero láser guiado por IA o lanzar premios con distancia regulable.",
+    price: 189,
+    image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Óptica gran angular 2K Ultra HD de 160° con visión nocturna automática y zoom digital 4x",
+      "Algoritmo de seguimiento inteligente de mascotas: La cámara rota y enfoca automáticamente a su compañero",
+      "Puntero láser interactivo certificado seguro con modos de juego manual y autónomo programado por IA",
+      "Lanzador motorizado de golosinas y snacks con distancia graduable (1 a 3 metros)",
+      "Audio bidireccional en alta fidelidad y alertas automáticas de ladridos o llanto para calmar a su mascota"
+    ],
+    history: "Alivia la ansiedad por separación y transforma la distancia física en momentos diarios de juego, voz familiar y recompensas saludables."
+  },
+  {
+    id: "pet-07",
+    name: "Juguete Robótico Cognitivo con IA & Pluma AR para Gatos",
+    category: "toys",
+    description: "La próxima ola de estimulación cognitiva felina: ratón robótico inteligente con algoritmos de IA que aprenden el patrón de juego del gato y varían sus movimientos para no volverse predecibles, complementado con plumas electrónicas y proyecciones de realidad aumentada para frenar el sedentarismo y la ansiedad.",
+    price: 45,
+    image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Procesador con algoritmo adaptativo: Aprende la velocidad de respuesta del gato y cambia rutas dinámicamente",
+      "Evita el aburrimiento y la habituación mediante trayectorias aleatorias, frenadas y aceleraciones sorpresa",
+      "Ruedas con tracción todoterreno antienredos aptas para alfombras, suelos de madera y cerámicos",
+      "Modo autónomo con sensor de contacto: Se reactiva cuando el gato le da un toque con la pata",
+      "Batería recargable vía USB-C con materiales libres de BPA y plumas ecológicas intercambiables"
+    ],
+    history: "El enriquecimiento ambiental activo previene el sobrepeso y los trastornos de estrés en gatos de piso, despertando su agilidad natural."
+  },
+  {
+    id: "pet-08",
+    name: "Exoesqueleto Robótico de Rehabilitación Canina Repawse (Motorizado EMG)",
+    category: "wellbeing",
+    description: "Dispositivo motorizado pionero ganador de premio internacional de diseño biomecánico. Lee la marcha de las patas sanas mediante sensores de electromiografía (sEMG) y asiste de forma activa y sincronizada el movimiento de patas afectadas por lesiones medulares, displasias o postoperatorios.",
+    price: 1250,
+    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Sensores mioeléctricos avanzados que captan microseñales de intención motriz en patas funcionales",
+      "Motores brushless de alta precisión que asisten el paso con suavidad, evitando sobrecargas articulares",
+      "Chasis articulado ultra ligero fabricado en fibra de carbono y polímeros hipoalergénicos",
+      "Calibración y seguimiento clínico a través de app especializada para veterinarios rehabilitadores y tutores",
+      "Servicio de adaptación personalizada y asesoramiento técnico directo por el equipo de Peludos & Co"
+    ],
+    history: "Representa el futuro de la medicina veterinaria regenerativa: devuelve la movilidad independiente y la ilusión de explorar a perros con dificultades motoras."
+  },
+  {
+    id: "pet-09",
+    name: "Pienso Sostenible con Proteína de Insecto (oProtein & Bioflytech Alicante)",
+    category: "nutrition",
+    description: "Nutrición veterinaria de vanguardia elaborada con harina de mosca soldado negra (Hermetia illucens) en Alicante. Ofrece una proteína hipoalergénica con digestibilidad superior al 90%, rica en ácido láurico y con una huella de carbono, agua y suelo drásticamente menor que la carne tradicional.",
+    price: 38,
+    image: "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Proteína purificada de mosca soldado negra: 100% hipoalergénica para perros y gatos con alergias alimentarias",
+      "Digestibilidad certificada de más del 90%, optimizando la absorción nutricional y heces más firmes",
+      "Rico en ácido láurico con propiedades antibacterianas e inmunoestimulantes para la microbiota intestinal",
+      "Huella ecológica ultra reducida: Ahorra un 95% de agua y tierra en comparación con el ganado vacuno",
+      "Elaboración circular de proximidad en España por empresas líderes del sector (Bioflytech, Alicante)"
+    ],
+    history: "La combinación perfecta entre ciencia veterinaria de alto rendimiento y sostenibilidad medioambiental para tutores conscientes."
+  },
+  {
+    id: "pet-10",
+    name: "Ecosistema Conectado de Cuidado Integral PetSuper (Suite Completa IFA Berlín 2026)",
+    category: "smart-tech",
+    description: "La tendencia más innovadora presentada en IFA Berlín (septiembre 2026): una gama interconectada (arenero, secadora de cabina silenciosa, comedero facial, fuente de consumo y cámara IA) que cruza datos de alimentación, hidratación e higiene para brindar una visión médica 360° del bienestar animal.",
+    price: 1490,
+    image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Suite completa de 5 dispositivos inteligentes sincronizados mediante protocolo unificado Wi-Fi / Zigbee",
+      "Cabina de secado relajante con control térmico suave por infrarrojos y esterilización por iones negativos",
+      "Cruce algorítmico global: Correlaciona calorías ingeridas, agua bebida, peso y frecuencia de excreción",
+      "Panel de salud holístico en la app con detección predictiva de estrés y alteraciones clínicas",
+      "Instalación guiada, puesta en marcha y servicio concierge exclusivo de Peludos & Co a domicilio"
+    ],
+    history: "El estándar definitivo para 2026: la tecnología para mascotas deja de ser gadgets dispersos para convertirse en un ecosistema preventivo integral."
+  },
+  {
+    id: "pet-11",
+    name: "Puerta Inteligente con Lector de Microchip (SureFlap / PetSafe / Petporte)",
+    category: "smart-tech",
+    description: "Control de accesos selectivo para perros y gatos que lee el microchip subcutáneo del animal (o collar RFID). Impide de forma absoluta la entrada de fauna o animales ajenos al hogar, registra horarios de salidas y entradas en la app y permite programar toques de queda nocturnos automáticos.",
+    price: 189,
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Lector multieje RFID integrado compatible con chips subcutáneos estándar de 15 dígitos (FDX-B)",
+      "Apertura selectiva ultra rápida: concede paso únicamente a las mascotas registradas en el sistema",
+      "Protección anti-intrusos: pestillo de doble sentido reforzado contra empujes de animales extraños",
+      "Control horario y modo toque de queda: bloqueo programable por app para impedir salidas tras el anochecer",
+      "Instalación universal en puertas de madera, cristal templado, PVC o muros con aislamiento térmico reforzado"
+    ],
+    history: "La solución de acceso definitiva para chalets y bajos con jardín en el corredor norte de Madrid: seguridad total sin tener que vigilar la puerta constantemente."
+  },
+  {
+    id: "pet-12",
+    name: "Lanzador Automático de Pelotas con IA iFetch (Ejercicio & Entrenamiento Inteligente)",
+    category: "toys",
+    description: "Lanzador robotizado diseñado para el ejercicio físico activo y la estimulación mental de perros. Dispone de sensores de proximidad inteligentes que pausan el lanzamiento si el animal se cruza frente a la boca de salida, 3 distancias regulables y aprendizaje para autorecarga autónoma.",
+    price: 145,
+    image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Tres distancias de lanzamiento motorizado (3, 6 y 9 metros) con selector táctil fácil o modo aleatorio",
+      "Sensor de seguridad por infrarrojos: detiene el disparo instantáneamente si detecta presencia a menos de 1 metro",
+      "Embudo receptor amplio: entrena al perro a devolver y soltar la pelota de forma autónoma",
+      "Diseño ergonómico y silencioso apto tanto para salón interior como para terraza y jardín",
+      "Incluye 3 pelotas de tenis especiales no abrasivas que cuidan la dentadura y encías de tu perro"
+    ],
+    history: "Combate el sedentarismo y la ansiedad por falta de estímulos en razas enérgicas, canalizando el juego de forma segura y controlada."
+  },
+  {
+    id: "pet-13",
+    name: "Cheerble Wicked Ball (Bola Interactiva con Sensores y Movimiento Autónomo IA)",
+    category: "toys",
+    description: "Bola inteligente con canal oficial de venta confirmado en la UE. Diseñada específicamente para estimular el instinto cazador felino y canino mediante sensores inerciales que detectan obstáculos, saltos irregulares, luces LED hipnóticas y un ciclo de descanso automático anti-fatiga.",
+    price: 49,
+    image: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Algoritmo inercial 3D: retrocede, gira y salta de forma autónoma al topar con obstáculos o paredes",
+      "3 niveles de interacción (Gentle, Normal, Active) según la timidez o energía de tu mascota",
+      "Ciclo inteligente anti-fatiga: 10 minutos de juego activo seguidos de 30 minutos de reposo con reactivación por toque",
+      "Carcasa externa de goma natural resistente a mordiscos, lavable al agua y libre de tóxicos",
+      "Batería recargable USB-C de alta densidad con hasta 8 horas de diversión continua y garantía UE"
+    ],
+    history: "Un clásico renovado del enriquecimiento ambiental felino: activa a los gatos más sedentarios manteniéndolos ágiles y entretenidos."
+  },
+  {
+    id: "pet-14",
+    name: "Arnés de Monitorización Veterinaria Invoxia Biotracker (Grado Clínico & Canal Profesional)",
+    category: "health",
+    description: "Arnés biomédico de monitorización continua en formato arnés ergonómico (evita la presión cervical de los collares). Desarrollado para uso cardiológico y veterinario: registra electrocardiograma ambulatorio, frecuencia respiratoria, curvas de tos y actividad motora para pacientes cardiópatas o postoperatorios.",
+    price: 220,
+    image: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Sensores biomédicos integrados en el tejido pectoral sin necesidad de rasurar el pelaje del animal",
+      "Monitorización médica continua de frecuencia cardíaca, índice de arritmias y frecuencia respiratoria en reposo",
+      "Detección precoz de edema pulmonar y patrones de tos cardiogénica con alertas directas al smartphone",
+      "Formato arnés envolvente que distribuye la tracción sin comprimir la tráquea ni el cuello",
+      "Plataforma web profesional para exportación de historiales a tu clínica veterinaria habitual"
+    ],
+    history: "A diferencia de los localizadores convencionales, este arnés es una herramienta de grado clínico creada para estrechar la colaboración directa con el cardiólogo veterinario."
+  },
+  {
+    id: "pet-15",
+    name: "Kit de Test de ADN Genético para Mascotas (Embark & Basepaws) — Salud, Razas y Riesgos",
+    category: "health",
+    description: "Test genético mediante hisopo bucal indoloro con análisis de más de 350 razas, variantes de pelaje y detección de más de 250 mutaciones asociadas a enfermedades hereditarias (mielopatía degenerativa, cardiopatías, sensibilidad a medicamentos MDR1). Abre una vía de medicina preventiva de precisión y venta cruzada con tu veterinario.",
+    price: 139,
+    image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Toma de muestra sencilla e indolora en casa mediante frotis bucal y envío prepagado a laboratorio genético",
+      "Cribado de más de 250 enfermedades genéticas y riesgos farmacológicos para tratamientos seguros",
+      "Desglose pormenorizado del porcentaje de razas ancestrales y árbol genealógico familiar",
+      "Informe clínico descargable en PDF validado para presentar en consulta veterinaria",
+      "Actualizaciones genéticas gratuitas de por vida a medida que la ciencia descubre nuevos marcadores"
+    ],
+    history: "Conocer el mapa genético de tu perro o gato permite diseñar planes nutricionales y chequeos preventivos antes de que las patologías hereditarias se manifiesten."
+  },
+  {
+    id: "pet-16",
+    name: "Cepillo de Aseo y Deslanado Autoaspirante para Mascotas (Grooming con Succión Silenciosa)",
+    category: "hygiene",
+    description: "Sistema integral de higiene y deslanado directo que aspira hasta el 99% del pelo muerto, caspa y ácaros directamente en el momento del cepillado. Dispone de un motor ultra silencioso (inferior a 50 dB) especialmente calibrado para no asustar a gatos y perros sensibles, y depósito de vaciado rápido en un clic.",
+    price: 119,
+    image: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Manguera flexible y cabezal de deslanado con púas protegidas de punta redondeada para masaje placentero",
+      "Motor silencioso (<50 dB) con 3 niveles de potencia para una adaptación progresiva sin miedo",
+      "Botón eyector mecánico: suelta el pelo retenido y lo succiona hacia el depósito en un instante",
+      "Filtro HEPA H13 sellado que retiene el 99,97% del polvo fino, caspa y alérgenos microscópicos",
+      "Incluye kit de 5 cabezales: cepillo de deslanado, carda suave, peine recortador y boquilla para sofás y ropa"
+    ],
+    history: "Acaba para siempre con las nubes de pelo flotando por casa y en la tapicería, elevando el cepillado diario a una experiencia relajante de salón canino."
+  },
+  {
+    id: "pet-17",
+    name: "Purificador de Aire Especial Mascotas Dreame FP10 (Filtro Antiolores & Caspa)",
+    category: "hygiene",
+    description: "Purificador de aire de alta capacidad especialmente formulado para hogares con perros y gatos. Su prefiltro electrostático atrapa el pelo flotante y pelusas, mientras su filtro de carbón activo de alta densidad neutraliza olores de arenero y comida húmeda, y el filtro True HEPA elimina la caspa causante de alergias.",
+    price: 269,
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Prefiltro electrostático lavable diseñado para atrapar el pelo en suspensión sin colapsar el filtro principal",
+      "Filtro de carbón catalítico de alta absorción que destruye olores orgánicos, orina y humedad animal",
+      "Caudal de aire limpio CADR de 420 m³/h: renueva por completo el aire de un piso o salón en pocos minutos",
+      "Sensor láser de partículas PM2.5 y compuestos orgánicos volátiles con ajuste automático de velocidad",
+      "Bloqueo infantil y de mascotas para evitar cambios involuntarios si el animal pisa la pantalla táctil"
+    ],
+    history: "Imprescindible para mantener el aire puro y fresco en pisos y urbanizaciones, neutralizando por completo los olores y las reacciones alérgicas."
+  },
+  {
+    id: "pet-18",
+    name: "Cama Inteligente Climatizada con Termorregulación Automática & Control de Sueño",
+    category: "wellbeing",
+    description: "Cama inteligente para mascotas con superficie de termorregulación activa frío/calor (desde 15°C hasta 35°C). Sus sensores térmicos y de presión detectan la presencia del animal y ajustan la temperatura óptima según la época del año o el estado articular (alivio de artrosis en perros seniors), sincronizando horas de descanso con la app.",
+    price: 179,
+    image: "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Placa térmica silenciosa de bajo voltaje con refrigeración termoeléctrica y calor por infrarrojo suave",
+      "Rango de ajuste continuo de 15°C a 35°C con termostato de seguridad contra variaciones bruscas",
+      "Sensores de presión biométricos que miden la duración, calidad y fases del descanso en la app",
+      "Colchón viscoelástico con soporte ortopédico para alivio de displasias y rigidez en perros mayores",
+      "Funda impermeable desenfundable de tejido técnico antidesgarro, lavable en lavadora doméstica"
+    ],
+    history: "Proporciona el máximo confort térmico a tu mascota: frescor en días de verano para razas chatas y calor terapéutico en invierno para articulaciones delicadas."
+  },
+  {
+    id: "pet-19",
+    name: "PawRobo — Robot Autónomo de Compañía para Mascotas [EN OBSERVACIÓN]",
+    category: "smart-tech",
+    description: "Dispositivo en radar tecnológico de Peludos & Co. Actualmente disponible exclusivamente en lista de espera en EE.UU. Incorpora navegación autónoma LiDAR por la vivienda, dispensador rotatorio de recompensas y cámara de seguimiento con visión nocturna. Marcado en observación rigurosa para evaluar apertura de canal europeo oficial en 6-12 meses.",
+    price: 399,
+    availability: "coming_soon",
+    isAvailable: false,
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Estado de catálogo: En observación tecnológica (Lista de espera activa en Estados Unidos)",
+      "Navegación espacial autónoma con sensores anti-caída y detección de alfombras y desniveles",
+      "Interacción lúdica autónoma programable para mantener entretenida a la mascota en ausencias prolongadas",
+      "Canal comercial europeo: Pendiente de confirmación de distribución oficial y homologación CE",
+      "Peludos & Co mantendrá informados a sus clientes sobre la apertura de reservas oficiales en España"
+    ],
+    history: "En Peludos & Co monitorizamos la vanguardia global con transparencia: solo comercializamos productos con garantía técnica y canal verificado, marcando las innovaciones de I+D en estricta observación."
+  },
+  {
+    id: "pet-20",
+    name: "Robot de Compañía con IA Ecovacs Pet Companion [EN OBSERVACIÓN - CES 2026]",
+    category: "smart-tech",
+    description: "Presentado en primicia en la feria tecnológica CES 2026. Robot rodante con visión computacional que patrulla la vivienda, detecta anomalías en la conducta del perro o gato, y actúa como compañero robótico con cámara gimbal estabilizada. Se encuentra en fase de pre-lanzamiento industrial sin canal comercial establecido todavía en la UE; en seguimiento para 6-12 meses.",
+    price: 550,
+    availability: "coming_soon",
+    isAvailable: false,
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
+    details: [
+      "Estado de catálogo: Novedad conceptual exhibida en CES 2026 (En fase de homologación)",
+      "Tracción omnidireccional con capacidad de salvar cables y obstáculos de hasta 20 mm de altura",
+      "Cámara gimbal 4K con estabilización de imagen para transmisiones en directo sin mareo",
+      "Procesamiento de IA en local para reconocimiento de conductas y posturas del animal",
+      "Canal comercial y precio final en la Unión Europea previstos para revisión en los próximos 6 a 12 meses"
+    ],
+    history: "Muestra el rumbo definitivo de la robótica doméstica aplicada a las mascotas. Evaluamos su madurez técnica antes de su introducción en nuestro catálogo oficial."
+  }
+];
+
+export function getProductsByCategory(category: ProductCategory): Product[] {
+  return PRODUCTS_DATA.filter((p) => p.category === category);
+}
+
+export function getAllProducts(): Product[] {
+  return PRODUCTS_DATA;
+}
