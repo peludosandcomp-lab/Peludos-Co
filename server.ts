@@ -75,7 +75,7 @@ async function startServer() {
       const cleanBase64 = base64Data.replace(/^data:image\/\w+;base64,/, "");
       const buffer = Buffer.from(cleanBase64, "base64");
       
-      const targetName = filename || "katty-prive-concierge.jpg";
+      const targetName = filename || "peludos-concierge.jpg";
       const publicPath = path.join(process.cwd(), "public", "images", targetName);
       const distPath = path.join(process.cwd(), "dist", "images", targetName);
       
@@ -212,7 +212,7 @@ Mensaje del cliente: ${message}`;
 
   const PORT = 3000;
   const server = app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Katty Privé server running on http://0.0.0.0:${PORT}`);
+    console.log(`Peludos & Co server running on http://0.0.0.0:${PORT}`);
   });
 
   process.on("SIGTERM", () => {

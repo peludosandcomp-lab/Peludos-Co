@@ -15,7 +15,7 @@ import { Sparkles, MessageCircle, Lock, ShieldCheck } from "lucide-react";
 export default function App() {
   const [isAdmin, setIsAdmin] = useState<boolean>(() => {
     try {
-      return localStorage.getItem("kattyprive_is_admin") === "true";
+      return localStorage.getItem("peludos_is_admin") === "true";
     } catch {
       return false;
     }
@@ -25,14 +25,14 @@ export default function App() {
 
   useEffect(() => {
     const handleOpenEmail = () => setShowEmailModal(true);
-    window.addEventListener("katty_open_email_modal", handleOpenEmail);
-    return () => window.removeEventListener("katty_open_email_modal", handleOpenEmail);
+    window.addEventListener("peludos_open_email_modal", handleOpenEmail);
+    return () => window.removeEventListener("peludos_open_email_modal", handleOpenEmail);
   }, []);
 
   const handleAdminLogin = () => {
     setIsAdmin(true);
     try {
-      localStorage.setItem("kattyprive_is_admin", "true");
+      localStorage.setItem("peludos_is_admin", "true");
     } catch (err) {
       console.warn("Could not save admin session:", err);
     }
@@ -41,7 +41,7 @@ export default function App() {
   const handleAdminLogout = () => {
     setIsAdmin(false);
     try {
-      localStorage.removeItem("kattyprive_is_admin");
+      localStorage.removeItem("peludos_is_admin");
     } catch (err) {
       console.warn("Could not remove admin session:", err);
     }
@@ -180,7 +180,7 @@ export default function App() {
       return updated;
     });
 
-    // 2. Format detailed WhatsApp message to Katty Privé (+34 632 89 26 57)
+    // 2. Format detailed WhatsApp message to Peludos & Co (+34 614 70 47 72)
     const itemsListText = items
       .map(
         (item, idx) =>
@@ -266,7 +266,7 @@ ${itemsListText}
         next = prev.filter((id) => id !== sanitizedProduct.id);
       }
       try {
-        localStorage.setItem("kattyprive_sold_out_ids", JSON.stringify(next));
+        localStorage.setItem("peludos_sold_out_ids", JSON.stringify(next));
       } catch (err) {
         console.warn("Error saving sold out IDs:", err);
       }
@@ -302,7 +302,7 @@ ${itemsListText}
       const copy = { ...prev };
       delete copy[productId];
       try {
-        localStorage.setItem("kattyprive_custom_products", JSON.stringify(copy));
+        localStorage.setItem("peludos_custom_products", JSON.stringify(copy));
       } catch (err) {
         console.warn("Error resetting custom product:", err);
       }
@@ -313,7 +313,7 @@ ${itemsListText}
     setSoldOutProductIds((prev) => {
       const next = prev.filter((id) => id !== productId);
       try {
-        localStorage.setItem("kattyprive_sold_out_ids", JSON.stringify(next));
+        localStorage.setItem("peludos_sold_out_ids", JSON.stringify(next));
       } catch (err) {
         console.warn("Error resetting sold out IDs:", err);
       }

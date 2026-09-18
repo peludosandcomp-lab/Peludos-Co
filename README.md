@@ -1,6 +1,6 @@
-# Katty Privé — Alta Joyería & Alta Costura
+# Peludos & Co — Premium Pet Care
 
-Aplicación web interactiva para Katty Privé con catálogo de alta joyería, experiencia de alta costura, sistema de reservas de cita privada y consejera virtual de regalos impulsada por la API de Google Gemini.
+Aplicación web boutique oficial de **Peludos & Co**, especializada en tecnología de vanguardia, salud preventiva, biotracking y productos de alta gama para perros y gatos. Incluye catálogo inteligente, reservas de citas y demostraciones tech a domicilio en Madrid Norte, y asistente virtual con la API de Google Gemini.
 
 ---
 
@@ -121,7 +121,7 @@ Si ya ha descargado el proyecto como ZIP:
    ```bash
    git init
    git add .
-   git commit -m "Versión inicial Katty Privé"
+   git commit -m "Versión inicial Peludos & Co"
    ```
 3. Cree un repositorio vacío en su cuenta de [GitHub](https://github.com/new).
 4. Conecte y suba los cambios:

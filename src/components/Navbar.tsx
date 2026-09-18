@@ -226,7 +226,7 @@ export default function Navbar({
                 if (onOpenEmailModal) {
                   onOpenEmailModal();
                 } else {
-                  window.dispatchEvent(new CustomEvent("katty_open_email_modal"));
+                  window.dispatchEvent(new CustomEvent("peludos_open_email_modal"));
                 }
               }}
               title="Escribir correo a Peludos & Co (peludosandcomp@gmail.com)"

@@ -16,8 +16,8 @@ export default function AdminAuthModal({ isOpen, onClose, onSuccess }: AdminAuth
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Clave fácil y segura para la dueña
-    const validKeys = ["katty2026", "katty", "admin", "1234"];
+    // Clave de acceso para la administración de Peludos & Co
+    const validKeys = ["peludos2026", "peludos", "admin", "1234"];
     if (validKeys.includes(password.trim().toLowerCase())) {
       setError(false);
       onSuccess();
@@ -92,11 +92,11 @@ export default function AdminAuthModal({ isOpen, onClose, onSuccess }: AdminAuth
             {error && (
               <p className="text-xs text-rose-700 mt-1.5 flex items-center gap-1">
                 <AlertCircle size={13} />
-                Clave incorrecta. (Clave por defecto: <strong className="font-mono">katty2026</strong>)
+                Clave incorrecta. (Clave por defecto: <strong className="font-mono">peludos2026</strong>)
               </p>
             )}
             <p className="text-[10px] text-stone-400 font-mono mt-1">
-              * Clave predeterminada configurada: <strong>katty2026</strong>
+              * Clave predeterminada configurada: <strong>peludos2026</strong>
             </p>
           </div>
 

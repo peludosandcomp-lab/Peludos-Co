@@ -226,9 +226,9 @@ export default function Catalog({
         <div className="h-0.5 w-16 bg-[#c5a880]/60 mx-auto mt-4" />
       </div>
 
-      {/* Categories Filter Tabs (Single Horizontal Line with active indicator) */}
-      <div className="border-b border-[#c5a880]/20 pb-2 mb-10 overflow-x-auto scrollbar-none">
-        <div className="flex justify-start md:justify-center items-center space-x-1 sm:space-x-4 md:space-x-6 text-xs md:text-sm tracking-[0.18em] font-light min-w-max px-2">
+      {/* Categories Filter Tabs (Organized in 2 rows without horizontal scrolling) */}
+      <div className="border-b border-[#c5a880]/20 pb-4 mb-10">
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-2.5 max-w-5xl mx-auto px-2">
           {CATEGORY_TABS.map((tab) => {
             const count = tab.id === "all" 
               ? products.length 
@@ -241,26 +241,20 @@ export default function Catalog({
                 onClick={() => {
                   setSelectedCategory(tab.id);
                 }}
-                className={`px-3 md:px-5 py-2.5 relative transition-all duration-300 cursor-pointer whitespace-nowrap group flex items-center gap-1.5 ${
-                  isActive ? "text-[#8c1d27] font-normal" : "text-[#121212]/60 hover:text-[#8c1d27]"
+                className={`px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm tracking-wider font-light transition-all duration-200 cursor-pointer flex items-center gap-2 border ${
+                  isActive 
+                    ? "bg-[#0B192C] text-[#FAF9F6] border-[#0B192C] shadow-sm" 
+                    : "bg-white text-[#0B192C]/80 border-[#c5a880]/40 hover:border-[#0B192C] hover:text-[#0B192C] hover:bg-[#c5a880]/10"
                 }`}
               >
-                <span>{tab.label}</span>
-                <span className={`text-[9px] font-mono px-1.5 py-0.2 rounded-full ${
+                <span className="font-medium">{tab.label}</span>
+                <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
                   isActive 
-                    ? "bg-[#8c1d27]/10 text-[#8c1d27] font-semibold" 
-                    : "text-[#121212]/40 group-hover:text-[#8c1d27]"
+                    ? "bg-[#c5a880] text-[#0B192C] font-semibold" 
+                    : "bg-stone-100 text-stone-600 group-hover:bg-[#c5a880]/20"
                 }`}>
                   {count}
                 </span>
-                
-                {isActive && (
-                  <motion.div
-                    layoutId="activeCatalogCategory"
-                    className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#8c1d27]"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
               </button>
             );
           })}

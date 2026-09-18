@@ -19,7 +19,7 @@ export default function Footer({ onSelectSlide, onOpenAdmin, isAdmin = false, on
     if (onSelectSlide) {
       onSelectSlide(index);
     }
-    window.dispatchEvent(new CustomEvent("katty_goto_slide", { detail: { index } }));
+    window.dispatchEvent(new CustomEvent("peludos_goto_slide", { detail: { index } }));
     const heroElem = document.getElementById("hero-slider");
     if (heroElem) {
       heroElem.scrollIntoView({ behavior: "smooth" });
@@ -91,7 +91,7 @@ export default function Footer({ onSelectSlide, onOpenAdmin, isAdmin = false, on
                   if (onOpenEmailModal) {
                     onOpenEmailModal();
                   } else {
-                    window.dispatchEvent(new CustomEvent("katty_open_email_modal"));
+                    window.dispatchEvent(new CustomEvent("peludos_open_email_modal"));
                   }
                 }}
                 className="flex items-center gap-2.5 p-2.5 rounded bg-white/5 border border-[#c5a880]/20 hover:border-[#c5a880] hover:bg-white/10 transition-all group cursor-pointer"
@@ -111,7 +111,7 @@ export default function Footer({ onSelectSlide, onOpenAdmin, isAdmin = false, on
           {/* Newsletter subscription */}
           <div className="space-y-3 pt-4">
             <h5 className="font-serif text-xs uppercase tracking-widest text-[#c5a880] font-semibold">
-              Suscripción a la Maison
+              Suscríbete
             </h5>
             <p className="text-[10px] text-[#FAF9F6]/50">
               Reciba noticias de nuevas piezas de colección e invitaciones a eventos privados.

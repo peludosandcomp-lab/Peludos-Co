@@ -145,7 +145,7 @@ _Notificación enviada desde la web oficial de Peludos & Co_`;
     setBookingCompleted(newAppointment);
     setPreviousBooking(newAppointment);
 
-    // Open WhatsApp directly with notification to Katty (+34632892657)
+    // Open WhatsApp directly with notification to Peludos & Co (+34 614 70 47 72)
     const waUrl = generateWhatsAppUrl(newAppointment, isMod);
     try {
       window.open(waUrl, "_blank");
@@ -171,7 +171,7 @@ _Notificación enviada desde la web oficial de Peludos & Co_`;
       setTime(bookingCompleted.time);
       setBoutique(bookingCompleted.boutique);
 
-      // Notify modification to Katty's company WhatsApp
+      // Notify modification to Peludos & Co company WhatsApp
       const modifyWaUrl = generateWhatsAppUrl(
         {
           ...bookingCompleted,
@@ -253,7 +253,7 @@ _Notificación enviada desde la web oficial de Peludos & Co_`;
                         href="mailto:peludosandcomp@gmail.com" 
                         onClick={(e) => {
                           e.preventDefault();
-                          window.dispatchEvent(new CustomEvent("katty_open_email_modal"));
+                          window.dispatchEvent(new CustomEvent("peludos_open_email_modal"));
                         }}
                         className="text-[11px] text-[#FAF9F6]/90 hover:text-[#c5a880] transition-colors mt-0.5 block font-mono break-all cursor-pointer"
                         title="Escribir correo a peludosandcomp@gmail.com"

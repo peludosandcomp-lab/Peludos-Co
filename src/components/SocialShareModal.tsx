@@ -32,6 +32,10 @@ export default function SocialShareModal({ product, isOpen, onClose }: SocialSha
   const [imageDownloaded, setImageDownloaded] = useState(false);
   const [urlCopied, setUrlCopied] = useState(false);
 
+  const currentWebUrl = typeof window !== "undefined" && window.location.origin
+    ? window.location.origin
+    : "https://peludosandco.netlify.app";
+
   if (!isOpen) return null;
 
   // Formatted Texts for Each Network
@@ -111,7 +115,7 @@ ${product.description}
       const blobUrl = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = blobUrl;
-      link.download = `katty-prive-${safeName}.jpg`;
+      link.download = `peludos-and-co-${safeName}.jpg`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -183,30 +187,30 @@ ${product.description}
         </div>
 
         {/* Barra destacada con Link Directo a tu Web Oficial */}
-        <div className="bg-[#120002] border-b border-[#c5a880]/30 px-6 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-white">
+        <div className="bg-[#0B192C] border-b border-[#c5a880]/30 px-6 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-white">
           <div className="flex items-center gap-2 text-xs">
             <Globe size={15} className="text-[#c5a880] shrink-0" />
             <span className="text-[#FAF9F6]/70 text-[11px] font-mono">Web Oficial en Vivo:</span>
             <a
-              href="https://kattyprivemadrid.netlify.app/"
+              href={currentWebUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#c5a880] hover:text-white font-medium underline underline-offset-2 flex items-center gap-1 transition-colors"
             >
-              https://kattyprivemadrid.netlify.app/
+              {currentWebUrl}
               <ExternalLink size={12} />
             </a>
           </div>
           <button
             onClick={async () => {
               try {
-                await navigator.clipboard.writeText("https://kattyprivemadrid.netlify.app/");
+                await navigator.clipboard.writeText(currentWebUrl);
                 alert("¡Enlace web copiado al portapapeles!");
               } catch (err) {
                 // fallback
               }
             }}
-            className="px-2.5 py-1 bg-[#c5a880]/20 hover:bg-[#c5a880] text-[#c5a880] hover:text-[#120002] border border-[#c5a880]/40 rounded-xs text-[10px] font-mono uppercase tracking-wider flex items-center gap-1 transition-all cursor-pointer"
+            className="px-2.5 py-1 bg-[#c5a880]/20 hover:bg-[#c5a880] text-[#c5a880] hover:text-[#0B192C] border border-[#c5a880]/40 rounded-xs text-[10px] font-mono uppercase tracking-wider flex items-center gap-1 transition-all cursor-pointer"
           >
             <Copy size={11} />
             <span>Copiar Enlace Web</span>
@@ -384,18 +388,18 @@ ${product.description}
               /* Vista Interactiva con Enlaces Cliqueables */
               <div className="bg-white border border-[#c5a880]/50 rounded-xs p-4 text-xs text-stone-800 font-sans leading-relaxed space-y-3 relative shadow-inner">
                 <div className="whitespace-pre-line">
-                  {getCurrentText().split("https://kattyprivemadrid.netlify.app/").map((part, idx, arr) => (
+                  {getCurrentText().split(currentWebUrl).map((part, idx, arr) => (
                     <React.Fragment key={idx}>
                       {part}
                       {idx < arr.length - 1 && (
                         <a
-                          href="https://kattyprivemadrid.netlify.app/"
+                          href={currentWebUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-2 py-0.5 my-0.5 bg-[#8c1d27]/10 text-[#8c1d27] hover:bg-[#8c1d27] hover:text-white font-semibold rounded-xs border border-[#8c1d27]/30 transition-all underline decoration-[#8c1d27] underline-offset-2"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 my-0.5 bg-[#0B192C]/10 text-[#0B192C] hover:bg-[#0B192C] hover:text-white font-semibold rounded-xs border border-[#0B192C]/30 transition-all underline decoration-[#0B192C] underline-offset-2"
                         >
                           <Globe size={12} />
-                          <span>https://kattyprivemadrid.netlify.app/</span>
+                          <span>{currentWebUrl}</span>
                           <ExternalLink size={11} />
                         </a>
                       )}
@@ -406,7 +410,7 @@ ${product.description}
                 <div className="pt-2 border-t border-stone-100 flex justify-end">
                   <button
                     onClick={handleCopyText}
-                    className="px-3 py-1.5 bg-[#8c1d27] hover:bg-[#120002] text-white text-xs font-mono rounded-xs flex items-center gap-1.5 cursor-pointer shadow-sm"
+                    className="px-3 py-1.5 bg-[#0B192C] hover:bg-[#1E293B] text-white text-xs font-mono rounded-xs flex items-center gap-1.5 cursor-pointer shadow-sm"
                   >
                     {copied ? <Check size={13} /> : <Copy size={13} />}
                     <span>{copied ? "¡Copiado!" : "Copiar todo el texto"}</span>
@@ -423,7 +427,7 @@ ${product.description}
             )}
 
             {/* TARJETA DESTACADA: ENLACE DIRECTO CLIQUEABLE A TU WEB */}
-            <div className="bg-gradient-to-r from-[#120002] via-[#240005] to-[#120002] text-white p-4 rounded-xs border border-[#c5a880]/50 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="bg-gradient-to-r from-[#0B192C] via-[#1E293B] to-[#0B192C] text-white p-4 rounded-xs border border-[#c5a880]/50 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-[#c5a880]/20 border border-[#c5a880]/60 flex items-center justify-center text-[#c5a880] shrink-0">
                   <Globe size={18} />
@@ -438,12 +442,12 @@ ${product.description}
                     </span>
                   </div>
                   <a
-                    href="https://kattyprivemadrid.netlify.app/"
+                    href={currentWebUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs sm:text-sm font-serif font-medium text-white hover:text-[#c5a880] underline underline-offset-4 flex items-center gap-1.5 transition-colors group mt-0.5"
                   >
-                    <span>https://kattyprivemadrid.netlify.app/</span>
+                    <span>{currentWebUrl}</span>
                     <ExternalLink size={13} className="text-[#c5a880] group-hover:translate-x-0.5 transition-transform" />
                   </a>
                 </div>
@@ -451,10 +455,10 @@ ${product.description}
 
               <div className="flex items-center gap-2 w-full sm:w-auto">
                 <a
-                  href="https://kattyprivemadrid.netlify.app/"
+                  href={currentWebUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 sm:flex-none px-4 py-2 bg-[#c5a880] hover:bg-[#b59870] text-[#120002] font-semibold text-xs font-mono uppercase tracking-wider rounded-xs flex items-center justify-center gap-1.5 transition-all shadow-sm cursor-pointer"
+                  className="flex-1 sm:flex-none px-4 py-2 bg-[#c5a880] hover:bg-[#b59870] text-[#0B192C] font-semibold text-xs font-mono uppercase tracking-wider rounded-xs flex items-center justify-center gap-1.5 transition-all shadow-sm cursor-pointer"
                 >
                   <Globe size={14} />
                   <span>Abrir Web Ahora</span>
@@ -464,7 +468,7 @@ ${product.description}
                 <button
                   onClick={async () => {
                     try {
-                      await navigator.clipboard.writeText("https://kattyprivemadrid.netlify.app/");
+                      await navigator.clipboard.writeText(currentWebUrl);
                       setUrlCopied(true);
                       setTimeout(() => setUrlCopied(false), 3000);
                     } catch (err) {
@@ -499,16 +503,16 @@ ${product.description}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
               {/* Abrir Tienda Web Oficial */}
               <a
-                href="https://kattyprivemadrid.netlify.app/"
+                href={currentWebUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 bg-white hover:bg-[#c5a880]/10 border border-[#c5a880]/40 hover:border-[#8c1d27] rounded-xs text-xs font-medium text-stone-800 transition-colors group shadow-2xs"
+                className="flex items-center justify-between p-3 bg-white hover:bg-[#c5a880]/10 border border-[#c5a880]/40 hover:border-[#0B192C] rounded-xs text-xs font-medium text-stone-800 transition-colors group shadow-2xs"
               >
                 <div className="flex items-center gap-2">
-                  <Globe size={16} className="text-[#8c1d27]" />
+                  <Globe size={16} className="text-[#0B192C]" />
                   <span className="font-serif">Ver Tienda Web</span>
                 </div>
-                <ExternalLink size={13} className="text-stone-400 group-hover:text-[#8c1d27]" />
+                <ExternalLink size={13} className="text-stone-400 group-hover:text-[#0B192C]" />
               </a>
 
               {/* Abrir Instagram */}

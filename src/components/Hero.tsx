@@ -90,12 +90,12 @@ export default function Hero({ onScrollToCatalog: _onScrollToCatalog, onOpenGift
         }
       }
     };
-    window.addEventListener("katty_goto_slide", handleGoToSlide);
-    return () => window.removeEventListener("katty_goto_slide", handleGoToSlide);
+    window.addEventListener("peludos_goto_slide", handleGoToSlide);
+    return () => window.removeEventListener("peludos_goto_slide", handleGoToSlide);
   }, []);
   const [customImages, setCustomImages] = useState<Record<string, string>>(() => {
     try {
-      const saved = localStorage.getItem("katty_prive_slider_images_v3");
+      const saved = localStorage.getItem("peludos_slider_images_v1");
       return saved ? JSON.parse(saved) : {};
     } catch {
       return {};
@@ -131,7 +131,7 @@ export default function Hero({ onScrollToCatalog: _onScrollToCatalog, onOpenGift
       const updated = { ...customImages, [activeSlide.id]: base64 };
       setCustomImages(updated);
       try {
-        localStorage.setItem("katty_prive_slider_images_v3", JSON.stringify(updated));
+        localStorage.setItem("peludos_slider_images_v1", JSON.stringify(updated));
       } catch (_) {}
 
       setUploadNotice("Fotografía actualizada y adaptada al slider");
@@ -140,9 +140,9 @@ export default function Hero({ onScrollToCatalog: _onScrollToCatalog, onOpenGift
       // Persist to backend server so it stays permanently in public/images
       try {
         const filename = activeSlide.id === "atencion-personalizada"
-          ? "katty-prive-concierge.jpg"
-          : activeSlide.id === "katty-prive"
-          ? "katty-prive-boxes-hero.jpg"
+          ? "peludos-concierge.jpg"
+          : activeSlide.id === "peludos-company"
+          ? "peludos-hero.jpg"
           : `${activeSlide.id}.jpg`;
         await fetch("/api/upload-hero-image", {
           method: "POST",
